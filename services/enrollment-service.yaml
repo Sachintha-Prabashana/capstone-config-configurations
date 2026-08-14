@@ -19,4 +19,9 @@ spring:
         format_sql: true
 
 server:
-  port: 8002
+  port: 0
+
+eureka:
+  instance:
+    # using Service Name and Random UUID to create a unique Instance ID - for port is dynamic ( it means port = 0 )
+    instance-id: ${spring.application.name}:${random.value}

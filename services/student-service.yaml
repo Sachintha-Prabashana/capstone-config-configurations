@@ -25,8 +25,13 @@ servlet:
     max-request-size: 10MB
 
 server:
-  port: 8000
+  port: 0
   forward-headers-strategy: framework
+
+eureka:
+  instance:
+    # using Service Name and Random UUID to create a unique Instance ID - for port is dynamic ( it means port = 0 )
+    instance-id: ${spring.application.name}:${random.value}
 
 app:
   storage:
